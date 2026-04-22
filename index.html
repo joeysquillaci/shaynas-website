@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shayna Chejfec | Medical Student</title>
+  <meta
+    name="description"
+    content="Official website of Shayna Chejfec, osteopathic medical student focused on patient-centered care, research, and advocacy."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f8f6ff;
+      --bg-alt: #f1ebff;
+      --surface: #ffffff;
+      --surface-soft: #f5f1ff;
+      --primary: #7f5af0;
+      --primary-deep: #5b39b5;
+      --secondary: #b49cff;
+      --text: #261d42;
+      --text-soft: #5d5579;
+      --line: #e2dafd;
+      --shadow: 0 20px 40px rgba(91, 57, 181, 0.14);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 8% 8%, #efe7ff, transparent 35%),
+        radial-gradient(circle at 90% 14%, #e9dcff, transparent 32%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 16px;
+      z-index: 20;
+      margin-top: 16px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 8px 30px rgba(59, 33, 116, 0.08);
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.94rem;
+      color: var(--text-soft);
+    }
+
+    .menu a:hover {
+      color: var(--primary-deep);
+    }
+
+    .hero {
+      padding: 88px 0 56px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #ffffff 0%, #f4eeff 100%);
+    }
+
+    .hero-main::before {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -110px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #d8c4ff 0%, #b89cff 62%, transparent 70%);
+      opacity: 0.55;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--primary-deep);
+      background: #eee6ff;
+      border: 1px solid #dfd1ff;
+      border-radius: 999px;
+      padding: 7px 12px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      font-size: 1.06rem;
+      color: var(--text-soft);
+      max-width: 60ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      padding: 11px 17px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), #936eff);
+      box-shadow: 0 10px 20px rgba(127, 90, 240, 0.27);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(127, 90, 240, 0.35);
+    }
+
+    .btn-ghost {
+      color: var(--primary-deep);
+      background: #f4edff;
+      border-color: #e2d6ff;
+    }
+
+    .btn-ghost:hover {
+      background: #ece0ff;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-card,
+    .focus-card {
+      padding: 24px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+      color: var(--text-soft);
+    }
+
+    .label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--primary-deep);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .focus-note {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    main section {
+      margin: 18px 0;
+      padding: 28px;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .mini-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .mini-card p,
+    .mini-card li {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .mini-card ul {
+      margin-top: 4px;
+      padding-left: 1.1rem;
+      list-style-position: outside;
+    }
+
+    .mini-card li + li {
+      margin-top: 2px;
+    }
+
+    .timeline {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline li {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fff 0%, #fbf8ff 100%);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .timeline strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .meta {
+      font-size: 0.86rem;
+      color: var(--primary-deep);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .timeline p {
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .chip {
+      padding: 7px 10px;
+      background: #f1e9ff;
+      border: 1px solid #deceff;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #5132a9;
+      font-weight: 500;
+    }
+
+    .pub-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .pub-list li {
+      border-left: 3px solid #bfa6ff;
+      padding-left: 12px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin: 34px 0 28px;
+      text-align: center;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 930px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 68px;
+      }
+
+      .topbar {
+        border-radius: 16px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">Shayna Chejfec</div>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#service">Service</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article class="panel hero-main">
+        <span class="eyebrow">Future Physician</span>
+        <h1>Medical Student, Researcher, and Advocate for Underserved Communities</h1>
+        <p class="lead">
+          Shayna Chejfec is a Doctor of Osteopathic Medicine candidate at Marian University College of
+          Osteopathic Medicine with a strong foundation in transplant and translational research, clinical
+          service, and leadership. She is committed to patient-centered care and women’s health equity.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="docs/ShaynaCV.pdf">View CV</a>
+        </div>
+      </article>
+
+      <aside class="hero-side">
+        <article class="panel focus-card">
+          <p class="label">Current Focus</p>
+          <p class="focus-note">
+            Residency preparation rooted in collaborative care, surgical curiosity, rigorous outcomes research,
+            and long-term advocacy for vulnerable populations.
+          </p>
+          <div class="chips">
+            <span class="chip">Kidney Transplant Research</span>
+            <span class="chip">Clinical Service</span>
+            <span class="chip">Medical Education</span>
+          </div>
+        </article>
+
+        <article class="panel contact-card" id="contact">
+          <p class="label">Contact</p>
+          <ul class="contact-list">
+            <li><strong>Location:</strong> Indianapolis, IN</li>
+            <li><strong>Email:</strong> <a href="mailto:schejfec051@marian.edu">schejfec051@marian.edu</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+16305243302">630-524-3302</a></li>
+          </ul>
+        </article>
+      </aside>
+    </section>
+
+    <main>
+      <section class="panel" id="about">
+        <h2 class="section-title">About Shayna</h2>
+        <div class="grid-2">
+          <article class="mini-card">
+            <h3>Clinical Mission</h3>
+            <p>
+              Shayna seeks training that combines academic curiosity with compassionate care for underserved
+              communities. Her work reflects a sustained commitment to health equity and advocacy.
+            </p>
+          </article>
+          <article class="mini-card">
+            <h3>Hands-On Strengths</h3>
+            <p>
+              Through anatomy prosection, free-clinic patient care, and surgical volunteer roles, she has built
+              practical clinical confidence and a deep appreciation for team-based medicine.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="education">
+        <h2 class="section-title">Education & Training</h2>
+        <ul class="timeline">
+          <li>
+            <strong>Doctor of Osteopathic Medicine (Expected May 2027)</strong>
+            <p class="meta">Marian University College of Osteopathic Medicine | Indianapolis, IN</p>
+            <p>Advanced medical training with concentration in clinical excellence, anatomy, and patient-centered care.</p>
+          </li>
+          <li>
+            <strong>B.S. in Biology and Chemistry (May 2023)</strong>
+            <p class="meta">University of Illinois at Chicago | Summa Cum Laude</p>
+            <p>Departmental Distinction in Biological Sciences and Dean’s List (2020-2023).</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel" id="research">
+        <h2 class="section-title">Research Highlights</h2>
+        <ul class="timeline">
+          <li>
+            <strong>Research Assistant, Transplant Surgery</strong>
+            <p class="meta">University of Illinois at Chicago | Aug 2024 - Present</p>
+            <p>
+              Conducting longitudinal renal transplant outcomes research in high-risk populations, including
+              chart review, multivariable analysis, and scholarly output for conferences and publication.
+            </p>
+          </li>
+          <li>
+            <strong>Summer Scholars Program, Pediatrics</strong>
+            <p class="meta">University of Illinois at Chicago | Jun 2022 - Aug 2022</p>
+            <p>
+              Evaluated adolescent PHQ-8 screening trends during COVID-19 and presented findings at the UIC
+              Summer Scholar Conference.
+            </p>
+          </li>
+          <li>
+            <strong>Pathology Research Internship</strong>
+            <p class="meta">University of Illinois at Chicago | May 2021 - Jun 2023</p>
+            <p>
+              Investigated prostate cancer treatment models using cell culture methods, PCR, MTP assays, and
+              translational interpretation.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel" id="service">
+        <h2 class="section-title">Service & Leadership</h2>
+        <div class="grid-2">
+          <article class="mini-card">
+            <h3>Patient Care Team Lead</h3>
+            <p><strong>Near West Free Clinic</strong> (Oct 2023 - Present)</p>
+            <p>Obtains vitals, performs physical exams, writes SOAP notes, and presents cases to supervising providers.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Vice President</h3>
+            <p><strong>AMSA at MU-COM</strong> (May 2024 - May 2025)</p>
+            <p>Led chapter initiatives including campus-wide outreach projects and classwide membership sponsorships.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Anatomy Lab Teaching Assistant & Prosector</h3>
+            <p><strong>MU-COM</strong> (Jul 2024 - Dec 2024)</p>
+            <p>Performed independent prosections for instruction and mentored first-year students in the lab.</p>
+          </article>
+          <article class="mini-card">
+            <h3>Academic Coach</h3>
+            <p><strong>UPchieve</strong> (Jul 2025 - Present)</p>
+            <p>Provides online tutoring support in biology, chemistry, and foundational sciences for K-12 students.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="publications">
+        <h2 class="section-title">Selected Publications & Presentations</h2>
+        <ul class="pub-list">
+          <li>
+            Advancing Transplant Equity: Comparable Transplant Outcomes in Financially Supported Recipients Despite
+            Delayed Access. <em>Journal of the American Society of Nephrology</em> (2025). DOI:
+            <a href="https://doi.org/10.1681/asn.2025t6fx4w9q" target="_blank" rel="noopener noreferrer">10.1681/asn.2025t6fx4w9q</a>
+          </li>
+          <li>
+            Pregnancy Outcomes in Kidney Transplant Recipients at an Urban Academic Medical Center. AMA Research
+            Challenge Poster (2025). DOI:
+            <a href="https://doi.org/10.48448/cber-yx81" target="_blank" rel="noopener noreferrer">10.48448/cber-yx81</a>
+          </li>
+          <li>
+            Robotic Kidney Transplantation in Obese Patients: Literature Review and Referral Center Experience.
+            MU-COM Research Day Poster (2024).
+          </li>
+          <li>
+            Primary Care Depression Screening Patterns Utilizing PHQ-8 Across Three Years of the SARS-CoV-2 Pandemic.
+            UIC Summer Scholars Conference Poster (2022).
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2 class="section-title">Certifications, Languages, and Interests</h2>
+        <div class="grid-2">
+          <article class="mini-card">
+            <h3>Certifications</h3>
+            <ul>
+              <li>BLS (Basic Life Support), active through July 2027</li>
+              <li>Culturally and Linguistically Appropriate Services (CLAS) in maternal healthcare</li>
+              <li>Kidney Health Coach training</li>
+            </ul>
+          </article>
+          <article class="mini-card">
+            <h3>Languages</h3>
+            <ul>
+              <li>English (Native)</li>
+              <li>Spanish (Basic)</li>
+              <li>Hebrew (Fair)</li>
+              <li>Yiddish (Basic)</li>
+            </ul>
+          </article>
+          <article class="mini-card">
+            <h3>Professional Memberships</h3>
+            <p>
+              SOMA, IOA, AMSA, ISMA, AMA, AOA, ACS, ASN, and Sigma Sigma Phi.
+            </p>
+          </article>
+          <article class="mini-card">
+            <h3>Personal Interests</h3>
+            <p>
+              Weightlifting, crocheting, knitting, food exploration, travel, fantasy and historical fiction, and time
+              with family and her cats, Friday and Mouse.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Shayna Chejfec. Built with care and purpose.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
